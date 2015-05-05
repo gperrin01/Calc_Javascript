@@ -2,8 +2,10 @@
 // clicking number again will override
 
 var num1; var bucket; var mathOp; var eq; var result;
+ var displayResult = document.getElementsByClassName('display')[0];
 function initialize() {
    num1='';  bucket='';  mathOp='';  eq='';  result=0;
+   displayResult.value = 0;
 }
 initialize();
 
@@ -14,6 +16,7 @@ var allNum = document.getElementsByClassName('number');
 for (var i=0; i<allNum.length; i++) {
   allNum[i].addEventListener('click', function (event) {
     num1 += this.value;
+    displayResult.value = num1;
   })
 }
 
@@ -24,6 +27,7 @@ for (var i=0; i<allOps.length; i++) {
     bucket = num1;
     mathOp = this.value;
     num1 = '';
+    displayResult.value = mathOp;
   })
 }
 
@@ -46,7 +50,7 @@ document.getElementsByClassName('eq')[0].addEventListener('click', function (eve
       result = bucket / num1;
       break;
   }
-  var displayResult = document.getElementsByClassName('display')[0];
+  // var displayResult = document.getElementsByClassName('display')[0];
   // debugger;
   displayResult.value = result;
 })
@@ -54,24 +58,5 @@ document.getElementsByClassName('eq')[0].addEventListener('click', function (eve
 // create event listerner for clear
 document.getElementsByClassName('clear')[0].addEventListener('click', function (event){
   initialize();
-  //num1=''; bucket=''; mathOp=''; eq=''; result=0;
 });
   
-
-
-
-// function add(x,y) {
-
-// }
-// function subtract(x,y) {
-
-// }
-// function divide(x,y) {
-  
-// }
-// function multiply(x,y) {
-
-// }
-// function clear() {
-
-// }

@@ -1,7 +1,7 @@
 // n1 then operator then n2
 // clicking number again will override
 
-var num1=''; var bucket; var mathOp; var eq; var result;
+var num1=''; var bucket=''; var mathOp=''; var eq=''; var result=0;
 // do i need them as global or loca var??
 
 // create event listerner for numbers + concat numbers prssed in case we wanna do "75"
@@ -28,24 +28,29 @@ document.getElementsByClassName('eq')[0].addEventListener('click', function (eve
   bucket = parseInt(bucket);
   num1 = parseInt(num1);
   switch (mathOp){
-    case: '+':
-      result = num1 + bucket;
+    case '+':
+      result = bucket + num1;
       break;
-    case: '-':
-      result = num1 - bucket;
+    case '-':
+      result = bucket - num1;
       break;
-    case: 'x':
+    case 'x':
       result = num1 * bucket;
       break;
-    case: '/':
-      result = ;num1/bucket
+    case '/':
+      result = bucket / num1;
       break;
   }
+  var displayResult = document.getElementsByClassName('display')[0];
+  displayResult.textContent = 'result';
 })
 
 
-// create event listerner for clear
-
+// // create event listerner for clear
+// document.getElementsByClassName('clear')[0].addEventListener('click', function (event) {
+//   var num1=''; var bucket=''; var mathOp=''; var eq=''; var result=0;
+// }
+  
 
 
 

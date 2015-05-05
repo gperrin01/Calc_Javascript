@@ -47,7 +47,8 @@ document.getElementsByClassName('eq')[0].addEventListener('click', function (eve
       break;
   }
   var displayResult = document.getElementsByClassName('display')[0];
-  displayResult.textContent = 'result';
+  // debugger;
+  displayResult.value = result;
 })
 
 // create event listerner for clear
